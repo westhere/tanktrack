@@ -19,5 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('user.home');
+/**
+ * User Pages
+ */
+Route::get('/dashboard', 'UserController@index')->name('user.dashboard');
+Route::post('/preferences/store', 'PreferencesController@store')->name('user.preferences.store');
+Route::get('/preferences', 'PreferencesController@index')->name('user.preferences');
+/**
+ * Admin pages
+ */
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
