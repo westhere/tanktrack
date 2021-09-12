@@ -25,6 +25,12 @@ Auth::routes();
 Route::get('/dashboard', 'UserController@index')->name('user.dashboard');
 Route::post('/preferences/store', 'PreferencesController@store')->name('user.preferences.store');
 Route::get('/preferences', 'PreferencesController@index')->name('user.preferences');
+//reading show all
+Route::get('/readings', 'ReadingController@index')->name('user.readings');
+//reading create reading
+Route::get('/readings/create', 'ReadingController@create')->name('readings.create');
+//reading store
+Route::post('/readings/store', 'ReadingController@store')->name('readings.store');
 /**
  * Admin pages
  */
